@@ -18,7 +18,7 @@
 
 package de.as.nquadsparser.util
 
-import java.io.CharConversionException
+import java.io.{FileWriter, BufferedWriter, CharConversionException}
 
 /**
  * Created by IntelliJ IDEA.
@@ -154,5 +154,47 @@ object NTriplesStringConverter {
     }
     sb.toString
 
+  }
+
+  def main(args: Array[String]) {
+//    val str = NTriplesStringConverter.convertFromEscapedString("update news.article_version set content='1\\U000104001' where article_version_id=7374;")
+//    val writer = new BufferedWriter(new FileWriter("utf8mb_test.sql"))
+//    writer.append(str)
+//    writer.newLine()
+//    writer.flush()
+//    writer.close()
+    println(NTriplesStringConverter.convertToEscapedString(
+      """|
+        |
+        |حسن حبيب / القطيف،جزيرة العرب
+        |
+        |جنين اليازوري /فلسطين
+        |
+        |فيصل اوكي دوكي/موسيقي/لبنان
+        |
+        |ادون/ كاتب وناشط مدني/ بيروت
+        |
+        |سمر كعدي/فرنسا
+        |
+        |ريما عيسى - مخرجة سينمائية / فلسطين
+        |
+        |ولاء الغصي/ فلسطين
+        |
+        |سمارة سلام/مصورة/ سوريا فلسطين
+        |
+        |عمر الشيخ - مدون وناشط سياسي  / موريتانيا
+        |
+        |محمد حفظ الله الهمداني/مدرس /اليمن
+        |
+        |حسين خليلي/فلسطين
+        |
+        |علي حسن/مصور فوتوغرافي/البحرين
+        |
+        |هديل محمد/مدونة/السعودية،فلسطين
+        |
+        |ألاء البابا/فلسطين
+        |
+        |ريما الوابل/السعودية
+        | """.stripMargin).split("\\\\u").mkString("\n"))
   }
 }

@@ -29,7 +29,7 @@ import java.util.zip.GZIPInputStream
  * To change this template use File | Settings | File Templates.
  */
 
-class FileObjectReader[T >: Null](val inputFile: File, val endObject: T, val compression: Boolean = false, numberOfObjects: Int = 0) {
+class FileObjectReader[T >: Null : Manifest](val inputFile: File, val endObject: T, val compression: Boolean = false, numberOfObjects: Int = 0) {
   var objectInput: ObjectInputStream = null
   var closed = false
   var bufferedObject: T = null

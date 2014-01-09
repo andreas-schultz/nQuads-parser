@@ -69,8 +69,3 @@ class BackwardComparator extends Comparator[Quad] {
       left.graph.compareTo(right.graph)
   }
 }
-
-/**
- * Convenience class, should only be used internally!
- */
-case class Triple(override val subject : NodeTrait, override val predicate : String, override val obj: NodeTrait) extends Quad(subject, predicate, obj, Consts.DEFAULT_GRAPH)

@@ -125,4 +125,4 @@ class BlockingQuadQueue(capacity: Int) extends QuadReader with QuadWriter {
 /**
  * This object signals the end of quads for an QuadQueue
  */
-case object NoQuadsLeft extends Quad(null,null,null,null)
+object NoQuadsLeft extends Quad(null,null,null,null)
